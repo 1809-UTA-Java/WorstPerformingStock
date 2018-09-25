@@ -7,14 +7,14 @@ public class WorstPerformingStock {
     }
 
     public static int worstPerformingStoc(int[][] matrix) {
-        int opening =  matrix[0][1];
-        int closing = matrix[0][2];
-        int worstPerformance = (opening - closing) / opening;
+        float opening =  matrix[0][1];
+        float closing = matrix[0][2];
+        float worstPerformance = (opening - closing) / opening;
         int id = 0;
 
         for (int row = 1; row < matrix.length; row++) {
-            int openingPrice = matrix[row][1];
-            int closingPrice = matrix[row][2];
+            float openingPrice = matrix[row][1];
+            float closingPrice = matrix[row][2];
             if (((openingPrice - closingPrice) / openingPrice) < worstPerformance) {
                 worstPerformance = matrix[row][0];
                 id = row;
