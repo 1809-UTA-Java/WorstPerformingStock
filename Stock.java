@@ -11,8 +11,10 @@ class Stock {
     */
     public static int WorstPerformingStock(int[][] matrix) {
         //A variable to hold the value of the worst performing stock
+        //Initialized with the first stock's performance
         double worstPerformingStock = (matrix[0][1]-matrix[0][2]) / matrix[0][1];
         //A variable to hold the ID of the stock with the worst performance
+        //Initialized with the first stock's ID
         int worstID = matrix[0][0];
 
         //This will go through the table one row at a time.
