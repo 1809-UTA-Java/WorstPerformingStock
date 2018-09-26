@@ -1,0 +1,2 @@
+javac -d bin src/com/revature/WorstPerformingStock.java
+java -cp bin com.revature.WorstPerformingStock

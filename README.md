@@ -8,3 +8,15 @@ Example input:
  [45, 2345, 2124]]
  
  public int WorstPerformingStock(int[][] matrix)
+
+# Directions
+To compile and run the program you can use the provided sh script.
+>./buildRun
+
+To run precompiled bytecode:
+>./run
+
+In the event of insufficient file permissions, you will need to add
+execution permission to the sh script.
+>chmod +x buildRun
+
