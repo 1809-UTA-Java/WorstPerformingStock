@@ -5,12 +5,10 @@ class WorstPerformingStock{
         int lowest=0;
         int performance;
         for(int i =0; i<stocks.length;i++){
-            for(int j = 0; j<stocks[i].length;j++){
-                performance = (stocks[i][2]-stocks[i][1])/stocks[i][1];
-                if (lowest < performance){
-                    lowest = performance;
-                    id = stocks[i][0];
-                }
+            performance = (stocks[i][2]-stocks[i][1])/stocks[i][1];
+            if (lowest < performance){
+                lowest = performance;
+                id = stocks[i][0];
             }
         }
        return id;
