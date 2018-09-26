@@ -23,9 +23,9 @@ class Stock {
         //Since worstPerfoming stock is initialized as the first stock, we can skip it
         for (int i=1; i < matrix.length; ++i) {
             //this checks if the current stock's performance is worse than the lowest we have saved.
-            if (stockPerformance (matrix[0][1], matrix[0][2]) < worstPerformingStock) {
+            if (stockPerformance (matrix[i][1], matrix[i][2]) < worstPerformingStock) {
                 //If it is we make this the new worst perfoming stock and change the ID to reflect that
-                worstPerformingStock = stockPerformance (matrix[0][1], matrix[0][2]);
+                worstPerformingStock = stockPerformance (matrix[i][1], matrix[i][2]);
                 worstID = matrix[i][0];
             }
             //if not we do nothing and check the next row
@@ -38,6 +38,7 @@ class Stock {
     *  Returns the performance as a double
     */
     public static double stockPerformance (int open, int close) {
-        return (open - close) / open;
+        double sub = close - open;
+        return (double) sub / open;
     }
 }
