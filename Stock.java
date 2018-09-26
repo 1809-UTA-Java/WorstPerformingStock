@@ -7,7 +7,9 @@ class Stock {
     /*This method shall take in a 2D integer array reprsenting a stock price
     * each row shall be comprise of an ID for the stock. Then the opening price of
     * a stock on a given day. Then the closing price for that stock on the same day.
-    * This function shall return the ID of the worst performing stock
+    *
+    * This function shall return the ID of the worst performing stock, if multiple stock have the same performace
+    * it shall return the ID of first one that is found.
     */
     public static int WorstPerformingStock(int[][] matrix) {
         //A variable to hold the value of the worst performing stock
@@ -26,7 +28,7 @@ class Stock {
                 worstPerformingStock = ((matrix[i][1]-matrix[i][2])/matrix[i][1]);
                 worstID = matrix[i][0];
             }
-            //if not we do nothing
+            //if not we do nothing and check the next row
         }
         //returns the previously found ID number
         return worstID;
