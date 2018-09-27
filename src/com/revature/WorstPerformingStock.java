@@ -7,10 +7,11 @@ class WorstPerformingStock {
     public static int worstPerformingStock(int[][] matrix){
         // assuming the stock ID cannot be negative
         int worstStockId = -1;
-        int tempWorstStockId = -1;
+        int tempWorstStockId = 0;
         
-        int worstStockValue = 0;
-        int tempWorstStockValue = 0;
+        // arbitrary large number.
+        double worstStockValue = 100000;
+        double tempWorstStockValue;
 
         int tempMatrix[];
 
@@ -18,18 +19,23 @@ class WorstPerformingStock {
             //set the the array i in matrix to the tempMatrix array
             tempMatrix = matrix[i];
             tempWorstStockId = tempMatrix[0];
-            worstStockValue = 
-            tempWorstStockValue = (tempMatrix[2] - tempMatrix[1])/tempMatrix[1];
+            double openingPrice = (double) tempMatrix[1];
+            double closingPrice = (double) tempMatrix[2];
+
+            //calculate the worst stock value by performing (closing price - opening price)/opening price
+            tempWorstStockValue = (closingPrice - openingPrice)/openingPrice;
             
+
             if (tempWorstStockValue < worstStockValue){
                 worstStockValue = tempWorstStockValue;
-                worstStockId = tempWorstStockID;
+                worstStockId = tempWorstStockId;
             }
         }
         return worstStockId;
     }
 
     public static void main(String[] args){
-        int worstId = worstPerformingStock(testArray);
+        System.out.println(worstPerformingStock(testArray));
+        
     }
 }
